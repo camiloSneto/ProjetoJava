@@ -1,0 +1,5 @@
+510;refrigerante;true;5.99;coca;false;360
+511;cerveja;false;5.99;cevada;true;360
+512;caipirinha;true;15.99;limão;true;200
+513;caipirinha;false;18.99;morango;true;200
+514;suco natural;false;8.99;laranja;false;400
