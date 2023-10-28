@@ -1,22 +1,25 @@
 package br.edu.infnet.appvenda.model.service;
 
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.appvenda.model.domain.NaoConsumivel;
+import br.edu.infnet.appvenda.model.repository.NaoConsumivelRepository;
 
 @Service
 public class NaoConsumivelService {
-	private Map<Integer, NaoConsumivel> mapaNaoConsumivel = new HashMap<Integer, NaoConsumivel>();
+	
+	@Autowired
+	private NaoConsumivelRepository naoConsumivelRepository;
 	
 	public void incluir(NaoConsumivel naoConsumivel) {
-		mapaNaoConsumivel.put(naoConsumivel.getCodigo(), naoConsumivel);
+		naoConsumivelRepository.save(naoConsumivel);
 	}
 	
 	public Collection<NaoConsumivel> obterLista() {
-		return mapaNaoConsumivel.values();
+		return (Collection<NaoConsumivel>) naoConsumivelRepository.findAll();	
 	}
 }
