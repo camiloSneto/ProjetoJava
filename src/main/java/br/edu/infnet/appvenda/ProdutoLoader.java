@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 import br.edu.infnet.appvenda.model.domain.Bebida;
 import br.edu.infnet.appvenda.model.domain.NaoConsumivel;
 import br.edu.infnet.appvenda.model.domain.Produto;
+import br.edu.infnet.appvenda.model.domain.Vendedor;
 import br.edu.infnet.appvenda.model.service.ProdutoService;
 
 @Order(4)
@@ -26,7 +27,7 @@ public class ProdutoLoader implements ApplicationRunner  {
 		
 		FileReader file = new FileReader("files/produto.txt");
 		BufferedReader  leitura = new BufferedReader(file);
-		
+		Vendedor vendedor = new Vendedor();
 		String linha = leitura.readLine();
 		
 		String[] campos = null;
@@ -35,6 +36,8 @@ public class ProdutoLoader implements ApplicationRunner  {
 			
 			campos = linha.split(";");
 			
+			
+			vendedor.setId(Integer.valueOf(campos[8]));
 			
 			switch (campos[7]) {
 			
@@ -48,6 +51,7 @@ public class ProdutoLoader implements ApplicationRunner  {
 				produto.setMarca(campos[4]);
 				produto.setMaterial(campos[5]);
 				produto.setPeso(Float.valueOf(campos[6]));
+				produto.setVendedor(vendedor);			
 				
 				produtoService.incluir(produto);
 				
@@ -62,20 +66,26 @@ public class ProdutoLoader implements ApplicationRunner  {
 				bebida.setSabor(campos[4]);
 				bebida.setAlcoolico(Boolean.valueOf(campos[5]));
 				bebida.setVolume(Float.valueOf(campos[6]));
+				bebida.setVendedor(vendedor);
 				
 				produtoService.incluir(bebida);
 				break;
 			default:
 				break;
 			}
-			
-			
+
 			linha = leitura.readLine();
 		}
 		
 		for(Produto produto: produtoService.obterLista()) {
 			System.out.println("[Produto] " + produto);
 		}
+		
+		System.out.println("Produtos do vendedor: " + vendedor.getId());
+		for(Produto produto: produtoService.obterLista(vendedor.getId())) {
+			System.out.println("[Produto] " + produto);
+		}
+		
 		leitura.close();		
 	}
 }
