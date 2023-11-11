@@ -1,0 +1,8 @@
+601;broche;true;20.99;propria;metal;0.02;NC
+602;caneca decorativa;false;45.99;canecolandia;porcelana;0.3;NC
+603;talher descartavel;true;0.99;plasutil;plastico;0.01;NC
+510;refrigerante;true;5.99;coca;false;360;B
+511;cerveja;false;5.99;cevada;true;360;B
+512;caipirinha;true;15.99;limão;true;200;B
+513;caipirinha;false;18.99;morango;true;200;B
+514;suco natural;false;8.99;laranja;false;400;B

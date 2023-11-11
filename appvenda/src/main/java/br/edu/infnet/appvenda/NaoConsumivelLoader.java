@@ -10,6 +10,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.appvenda.model.domain.NaoConsumivel;
+import br.edu.infnet.appvenda.model.domain.Vendedor;
 import br.edu.infnet.appvenda.model.service.NaoConsumivelService;
 
 @Order(3)
@@ -33,7 +34,9 @@ public class NaoConsumivelLoader implements ApplicationRunner {
 			
 			campos = linha.split(";");
 			
-
+			Vendedor vendedor = new Vendedor();
+			vendedor.setId(Integer.valueOf(campos[7]));
+			
 			NaoConsumivel naoConsumivel = new NaoConsumivel();
 				
 			naoConsumivel.setCodigo(Integer.valueOf(campos[0]));
@@ -43,7 +46,8 @@ public class NaoConsumivelLoader implements ApplicationRunner {
 			naoConsumivel.setMarca(campos[4]);
 			naoConsumivel.setMaterial(campos[5]);
 			naoConsumivel.setPeso(Float.valueOf(campos[6]));
-				
+			naoConsumivel.setVendedor(vendedor);
+			
 			naoConsumivelService.incluir(naoConsumivel);
 				
 			
