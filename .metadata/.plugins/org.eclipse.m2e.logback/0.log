@@ -1,0 +1,12 @@
+2023-10-23 22:09:07,704 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2023-10-23 22:26:28,020 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2023-10-28 11:50:59,651 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2023-10-28 11:59:55,217 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2023-10-28 12:02:32,991 [main] INFO  org.eclipse.jetty.server.Server - jetty-10.0.15; built: 2023-04-11T17:25:14.480Z; git: 68017dbd00236bb7e187330d7585a059610f661d; jvm 17.0.8.1+1
+2023-10-28 12:02:33,065 [main] INFO  o.e.j.s.s.DefaultSessionIdManager - Session workerName=node0
+2023-10-28 12:02:33,129 [main] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@8a5ecad{/wse,null,AVAILABLE}
+2023-10-28 12:02:33,170 [main] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@717646f1{HTTP/1.1, (http/1.1)}{0.0.0.0:56111}
+2023-10-28 12:02:33,275 [main] INFO  org.eclipse.jetty.server.Server - Started Server@20df25f8{STARTING}[10.0.15,sto=0] @184919ms
+2023-10-28 12:08:48,100 [Framework stop - Equinox Container: 2c2e8083-7be7-4b5f-a2e5-3685bc316797] INFO  org.eclipse.jetty.server.Server - Stopped Server@20df25f8{STOPPING}[10.0.15,sto=0]
+2023-10-28 12:08:48,106 [Framework stop - Equinox Container: 2c2e8083-7be7-4b5f-a2e5-3685bc316797] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@717646f1{HTTP/1.1, (http/1.1)}{0.0.0.0:0}
+2023-10-28 12:08:48,132 [Framework stop - Equinox Container: 2c2e8083-7be7-4b5f-a2e5-3685bc316797] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@8a5ecad{/wse,null,STOPPED}
