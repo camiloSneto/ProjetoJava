@@ -9,6 +9,8 @@ import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 
 @Entity
 @Table(name = "TProduto")
@@ -17,13 +19,17 @@ public class Produto {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Positive
 	private Integer id;
 	private String descricao;
 	private int codigo;
 	private double preco;
+	
+	@NotNull
 	private boolean estoque;
 	@ManyToOne
 	@JoinColumn(name = "idVendedor")
+
 	private Vendedor vendedor;
 	
 	public Vendedor getVendedor() {
