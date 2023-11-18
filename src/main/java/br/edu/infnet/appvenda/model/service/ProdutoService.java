@@ -22,6 +22,10 @@ public class ProdutoService {
 		return (Collection<Produto>) produtoRepository.findAll();	
 	}
 	
+	public long obterQtde() {
+		return produtoRepository.count();
+	}
+	
 	public Collection<Produto> obterLista(Integer idVendedor) {
 		return (Collection<Produto>) produtoRepository.obterLista(idVendedor);	
 	}

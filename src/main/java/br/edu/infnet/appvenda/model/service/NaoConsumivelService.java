@@ -22,4 +22,8 @@ public class NaoConsumivelService {
 	public Collection<NaoConsumivel> obterLista() {
 		return (Collection<NaoConsumivel>) naoConsumivelRepository.findAll();	
 	}
+	
+	public long obterQtde() {
+		return naoConsumivelRepository.count();
+	}
 }
